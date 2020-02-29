@@ -1,8 +1,9 @@
 #include "ConstantTable.h"
+#include "MutableTable.h"
 #include <iostream>
 using std::cout;
 
-void string_test()
+void const_test()
 {
 	ConstantTable<string> table;
 	table.add("int");
@@ -14,7 +15,16 @@ void string_test()
 	table.find_by_num(10, int_str);
 }
 
+void mutable_test()
+{
+	MutableTable m_table;
+	Lexeme lexeme { "var", "int", "5" };
+	m_table.add(lexeme);
+	string type_test = m_table.get_type("var");
+	bool set_type_test = m_table.set_type("var", "float");
+}
+
 void main()
 {
-	string_test();
+	mutable_test();
 }
