@@ -4,10 +4,6 @@ MutableTable::MutableTable()
 {
 }
 
-MutableTable::~MutableTable()
-{
-}
-
 Lexeme MutableTable::find(string name)
 {
 	auto found = this->hashtable.find(name);

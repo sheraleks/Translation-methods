@@ -16,5 +16,4 @@ public:
 	string get_value(string name);
 	bool set_value(string name, string value);
 	MutableTable();
-	~MutableTable();
 };

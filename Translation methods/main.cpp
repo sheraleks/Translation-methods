@@ -5,14 +5,9 @@ using std::cout;
 
 void const_test()
 {
-	ConstantTable<string> table;
-	table.add("int");
-	table.add("float");
-	table.add("double");
-	bool in = table.is_in_table("double");
-	int int_index = table.find_by_value("int");
-	string int_str;
-	table.find_by_num(10, int_str);
+	ConstantTable table;
+	table.load("types.txt");
+	bool in = table.find("double");
 }
 
 void mutable_test()
@@ -26,5 +21,5 @@ void mutable_test()
 
 void main()
 {
-	mutable_test();
+	const_test();
 }
