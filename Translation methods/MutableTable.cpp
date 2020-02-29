@@ -4,7 +4,17 @@ MutableTable::MutableTable()
 {
 }
 
-Lexeme MutableTable::find(string name)
+bool MutableTable::find(string name)
+{
+	auto found = this->hashtable.find(name);
+	if (found != this->hashtable.end())
+	{
+		return true;
+	}
+	return false;
+}
+
+Lexeme MutableTable::get_lexeme(string name)
 {
 	auto found = this->hashtable.find(name);
 	if (found != this->hashtable.end())
@@ -23,6 +33,17 @@ bool MutableTable::add(Lexeme lexeme)
 		return false;
 	}
 	this->hashtable[lex_name] = lexeme;
+	return true;
+}
+bool MutableTable::add(string name)
+{
+	auto found = this->hashtable.find(name);
+	if (found != this->hashtable.end())
+	{
+		return false;
+	}
+	this->hashtable[name] = Lexeme();
+	this->hashtable[name].name = name;
 	return true;
 }
 
