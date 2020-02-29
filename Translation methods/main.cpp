@@ -5,21 +5,30 @@ using std::cout;
 
 void const_test()
 {
-	ConstantTable table;
-	table.load("types.txt");
-	bool in = table.find("char");
+	ConstantTable table("const.txt");
+	bool test = table.find("this");
+	bool test1 = table.find("char");
+	return;
 }
 
 void mutable_test()
 {
-	MutableTable m_table;
-	Lexeme lexeme { "var", "int", "5" };
-	m_table.add(lexeme);
-	string type_test = m_table.get_type("var");
-	bool set_type_test = m_table.set_type("var", "float");
+	MutableTable table;
+	table.add(Lexeme { "int", "var", "5" });
+	table.add(Lexeme { "float", "num", "87.8" });
+	table.add(Lexeme { "char", "letter", "A" });
+	table.add("num1");
+	string type_test = table.get_type("var");
+	bool set_type_test = table.set_type("num1", "float");
+	bool set_type_test1 = table.set_type("n", "float");
+	string value_test = table.get_value("letter");
+	bool set_value_test = table.set_value("num1", "799.1");
+	bool set_value_test1 = table.set_value("n", "21.7");
+	Lexeme test_lexeme = table.get_lexeme("num");
+	Lexeme test_lexeme1 = table.get_lexeme("n");
 }
 
 void main()
 {
-	const_test();
+	mutable_test();
 }

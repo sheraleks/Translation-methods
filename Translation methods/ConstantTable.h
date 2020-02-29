@@ -1,3 +1,4 @@
+// ConstantTable.h
 #include <set>
 #include <string>
 #include <fstream>
@@ -8,9 +9,7 @@ class ConstantTable
 {
 private:
 	set<string> table;
-	void add(string element);
 public:
-	void load(string filename);
 	bool find(string element);
-	ConstantTable();
+	ConstantTable(string filename);
 };
