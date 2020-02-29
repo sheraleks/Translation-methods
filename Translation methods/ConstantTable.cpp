@@ -1,7 +1,8 @@
 #include "ConstantTable.h"
 
 ConstantTable::ConstantTable()
-{}
+{
+}
 
 void ConstantTable::add(string value)
 {

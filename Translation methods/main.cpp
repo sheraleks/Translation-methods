@@ -7,7 +7,7 @@ void const_test()
 {
 	ConstantTable table;
 	table.load("types.txt");
-	bool in = table.find("double");
+	bool in = table.find("char");
 }
 
 void mutable_test()
