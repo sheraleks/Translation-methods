@@ -2,5 +2,8 @@
 
 void main()
 {
-	ConstantTable<char> table;
+	ConstantTable<string> table;
+	table.add("int");
+	table.add("float");
+	table.add("double");
 }

@@ -21,3 +21,9 @@ public:
 template <typename T>
 ConstantTable<T>::ConstantTable()
 {}
+
+template <typename T>
+void ConstantTable<T>::add(T element)
+{
+	this->table.insert(element);
+}
