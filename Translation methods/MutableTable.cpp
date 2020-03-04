@@ -76,7 +76,8 @@ string MutableTable::get_value(string name)
 	{
 		return string();
 	}
-	return this->hashtable[name].value;
+	//return this->hashtable[name].value;
+	return string();
 }
 
 bool MutableTable::set_value(string name, string value)
@@ -86,6 +87,6 @@ bool MutableTable::set_value(string name, string value)
 	{
 		return false;
 	}
-	this->hashtable[name].value = value;
+	//this->hashtable[name].value = value;
 	return true;
 }

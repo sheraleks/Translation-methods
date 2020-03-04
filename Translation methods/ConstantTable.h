@@ -10,6 +10,9 @@ class ConstantTable
 private:
 	set<string> table;
 public:
-	bool find(string element);
+	// find by value
+	bool find(string value, int &index);
+	// find by index
+	bool find(int index, string &value);
 	ConstantTable(string filename);
 };
