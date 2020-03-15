@@ -1,14 +1,14 @@
 // MutableTable.h
 #include "Lexeme.h"
 #include <string>
-#include <map>
-using std::map;
+#include <unordered_map>
+using std::unordered_map;
 using std::string;
 
 class MutableTable
 {
 private:
-	map<string, Lexeme> hashtable;
+	unordered_map<string, Lexeme> hashtable;
 public:
 	bool find(string name);
 	bool add(Lexeme lexeme);
