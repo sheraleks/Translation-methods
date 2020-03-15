@@ -1,8 +1,7 @@
 #include "ConstantTable.h"
-//#include "MutableTable.h"
+#include "MutableTable.h"
 #include <iostream>
 using std::cout;
-using std::string;
 
 void const_test()
 {
@@ -11,28 +10,28 @@ void const_test()
 	bool test = table.find("this", index);
 	string value;
 	bool test1 = table.find(20, value);
-	return;
 }
 
-//void mutable_test()
-//{
-//	MutableTable table;
-//	table.add(Lexeme { "int", "var", "5" });
-//	table.add(Lexeme { "float", "num", "87.8" });
-//	table.add(Lexeme { "char", "letter", "A" });
-//	table.add("num1");
-//	string type_test = table.get_type("var");
-//	bool set_type_test = table.set_type("num1", "float");
-//	bool set_type_test1 = table.set_type("n", "float");
-//	string value_test = table.get_value("letter");
-//	bool set_value_test = table.set_value("num1", "799.1");
-//	bool set_value_test1 = table.set_value("n", "21.7");
-//	Lexeme test_lexeme = table.get_lexeme("num");
-//	Lexeme test_lexeme1 = table.get_lexeme("n");
-//	return;
-//}
+void mutable_test()
+{
+	MutableTable table;
+	table.add("a");
+	table.set_type("a", "char");
+	table.add("integer");
+	table.add("number");
+	table.add("hello_str");
+	int bucket, num;
+	table.get_address("a", bucket, num);
+	table.add("integer12");
+	table.add("number12");
+	table.add("hello_str12");
+	table.add("letter12");
+	table.get_address("a", bucket, num);
+	Lexeme lexeme;
+	table.get_lexeme(100, num, lexeme);
+}
 
 void main()
 {
-	const_test();
+	mutable_test();
 }
